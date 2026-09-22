@@ -28,8 +28,6 @@
   }
 
   const commandMap = {
-    chat: "/chat_mode",
-    crab: "/crab_mode",
     status: "/status",
     task: "/task",
     results: "/results",
