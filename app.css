@@ -1,0 +1,120 @@
+:root {
+  color-scheme: dark;
+  font-family: Inter, "Segoe UI", system-ui, sans-serif;
+  background: #0b1017;
+  color: #f4f7fb;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 12%, rgba(0,136,255,.23), transparent 30%),
+    radial-gradient(circle at 18% 72%, rgba(14,210,190,.14), transparent 26%),
+    #0b1017;
+}
+.shell {
+  width: min(720px, 100%);
+  margin: 0 auto;
+  padding: max(22px, env(safe-area-inset-top)) 18px 28px;
+}
+.hero {
+  position: relative;
+  text-align: center;
+  padding: 12px 0 24px;
+}
+.glow {
+  position: absolute;
+  inset: 12px 25% auto;
+  height: 150px;
+  filter: blur(36px);
+  background: rgba(0,145,255,.24);
+  border-radius: 50%;
+}
+.crab {
+  position: relative;
+  width: 132px;
+  height: 132px;
+  object-fit: cover;
+  border-radius: 34px;
+  box-shadow: 0 16px 50px rgba(0,0,0,.42);
+  animation: float 4s ease-in-out infinite;
+}
+.eyebrow {
+  margin-top: 16px;
+  font-size: 12px;
+  letter-spacing: .22em;
+  color: #73c9ff;
+}
+h1 {
+  margin: 5px 0 4px;
+  font-size: clamp(29px, 8vw, 42px);
+}
+.hero p, .foot { color: #99a8bb; }
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 11px;
+}
+button {
+  border: 1px solid rgba(255,255,255,.08);
+  background: linear-gradient(145deg, rgba(34,45,60,.96), rgba(20,28,39,.96));
+  color: #f8fbff;
+  min-height: 78px;
+  border-radius: 20px;
+  font: inherit;
+  font-size: 26px;
+  box-shadow: inset 0 1px rgba(255,255,255,.04), 0 10px 25px rgba(0,0,0,.2);
+  transition: transform .12s ease, border-color .2s ease;
+}
+button span {
+  display: block;
+  margin-top: 5px;
+  font-size: 14px;
+  font-weight: 650;
+}
+button:active {
+  transform: scale(.97);
+  border-color: rgba(87,188,255,.55);
+}
+button:disabled {
+  opacity: .48;
+  transform: none;
+  filter: grayscale(.35);
+}
+.status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  margin-top: 18px;
+  padding: 12px 16px;
+  border-radius: 16px;
+  background: rgba(255,255,255,.045);
+  color: #cbd5e1;
+}
+.dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #43dc91;
+  box-shadow: 0 0 18px #43dc91;
+}
+.foot {
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.45;
+  margin: 14px 8px 0;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+}
+@media (max-width: 380px) {
+  .grid { gap: 8px; }
+  button { min-height: 70px; border-radius: 17px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .crab { animation: none; }
+  button { transition: none; }
+}
